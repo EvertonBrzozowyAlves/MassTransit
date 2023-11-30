@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.Shared", "MassTransit.Shared\MassTransit.Shared.csproj", "{B726461F-F403-4703-8F7C-F488E47FDB0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MassTransit.Producer", "MassTransit.Producer\MassTransit.Producer.csproj", "{2D4C245A-045A-4766-A1E7-43ED038E5AE4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B726461F-F403-4703-8F7C-F488E47FDB0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B726461F-F403-4703-8F7C-F488E47FDB0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B726461F-F403-4703-8F7C-F488E47FDB0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B726461F-F403-4703-8F7C-F488E47FDB0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D4C245A-045A-4766-A1E7-43ED038E5AE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D4C245A-045A-4766-A1E7-43ED038E5AE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D4C245A-045A-4766-A1E7-43ED038E5AE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D4C245A-045A-4766-A1E7-43ED038E5AE4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

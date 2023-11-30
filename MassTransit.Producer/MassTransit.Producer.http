@@ -1,0 +1,6 @@
+@MassTransit.Producer_HostAddress = http://localhost:5221
+
+GET {{MassTransit.Producer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
