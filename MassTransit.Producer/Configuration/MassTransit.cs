@@ -6,7 +6,7 @@ public static class MassTransit
 {
     public static IServiceCollection ConfigureMassTransit(this IServiceCollection services, ConfigurationManager configurationManager)
     {
-        var massTransitConfiguration = configurationManager.GetSection("MassTransit").Get<MassTransitConfigurationModel>();
+        var massTransitConfiguration = configurationManager.GetSection("MassTransitAzure").Get<MassTransitAzureConfigurationModel>();
 
         if (massTransitConfiguration is null)
             throw new ApplicationException("Could not load MassTransit configuration");
@@ -15,15 +15,9 @@ public static class MassTransit
 
         services.AddMassTransit(options =>
         {
-            options.UsingRabbitMq((context, configuration) =>
+            options.UsingAzureServiceBus((context, configuration) =>
             {
-                configuration.Host(massTransitConfiguration.Server, massTransitConfiguration.VirtualHost, hostConfiguration =>
-                {
-                    hostConfiguration.Username(massTransitConfiguration?.UserName);
-                    hostConfiguration.Password(massTransitConfiguration?.Password);
-                });
-
-                configuration.ConfigureEndpoints(context);
+                configuration.Host(massTransitConfiguration.Connection);
             });
         });
 

@@ -16,7 +16,7 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 
-app.MapPost("/order", async ([FromServices] IBus bus, [FromServices] MassTransitConfigurationModel configurationModel) =>
+app.MapPost("/order", async ([FromServices] IBus bus, [FromServices] MassTransitAzureConfigurationModel configurationModel) =>
 {
     var endpoint = await bus.GetSendEndpoint(new Uri($"queue:{configurationModel.QueueName}"));
 
