@@ -24,6 +24,9 @@ app.MapPost("/order", async ([FromServices] IBus bus, [FromServices] MassTransit
     var order = new Order(user: user);
 
     await endpoint.Send(order);
+    
+    //NOTE: if you have a 'topic' queue in service bus:
+    //await bus.Publish(order);
 
     return Results.Ok();
 })

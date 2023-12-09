@@ -18,16 +18,21 @@ public static class MassTransit
             {
                 configuration.Host(massTransitConfiguration.Connection);
 
-                //NOTE: to have more than one queue, configure one of the below for each. If you don't configure like below, a queue will be created with the consumer class name
                 configuration.ReceiveEndpoint(massTransitConfiguration.QueueName, endpointConfiguration =>
                 {
                     endpointConfiguration.Consumer<OrderCreatedConsumer>();
+                    // endpointConfiguration.UseMessageRetry(retryConfiguration => //NOTE: see documentation for more options
+                    // {
+                    //     retryConfiguration.
+                    // });
                 });
                 
-                //configuration.ConfigureEndpoints(context);
+                //NOTE: if you have a 'topic' queue in service bus:
+                // configuration.SubscriptionEndpoint("sub-1", "topic", subscriptionEndpointConfiguration =>
+                // {
+                //     subscriptionEndpointConfiguration.Consumer<OrderCreatedConsumer>();
+                // });
             });
-
-            //options.AddConsumer<OrderCreatedConsumer>();
         });
 
         return services;

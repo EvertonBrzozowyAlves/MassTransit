@@ -18,6 +18,12 @@ public static class MassTransit
             options.UsingAzureServiceBus((context, configuration) =>
             {
                 configuration.Host(massTransitConfiguration.Connection);
+                
+                //NOTE: if you have a 'topic' queue in service bus:
+                // configuration.Message<Order>(messageConfiguration =>
+                // {
+                //     messageConfiguration.SetEntityName("topic");
+                // });
             });
         });
 
